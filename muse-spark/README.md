@@ -163,3 +163,23 @@ not a reasoning-effort rejection.
 **Incidental:** `-m <model>` overrides are refused in non-interactive mode by a hermes guard
 (*"Refusing this startup model override in non-interactive mode"*); the model must be pinned in the
 profile's `config.yaml`.
+
+### Retest at `--reasoning max` — still 500
+
+Retried after the 1.2 work: **5 more hermes attempts + 9 raw request shapes + 4 alternate provider routes — all failed.**
+
+**Raw sweep** (with `x-opencode-session`, which is required — without it deepseek returns `400 MissingSessionID`):
+
+deepseek-v4.1-flash 200 OK · omen-alpha 200 OK · hy4-preview 200 OK
+muse-spark-1.2 500 · union-alpha 500 · gpt-5.6-luna 500 · muse-spark-1.3 500
+
+**Shape sweep on 1.3** — bare / reasoning_effort int-75 / 'high' / {effort:high} / {effort:75} / stream:true / max_tokens:4096 / temp+top_p / max_completion_tokens — **500 on every one.**
+
+**Alternate routes** (muse-spark exists on 6 providers):
+
+- opencode-zen muse-spark-1.3 / -1.2 -> 401 "Model not supported"
+- openrouter meta/muse-spark-1.3-contributor -> 401 "Model not supported"
+- nous meta/muse-spark-1.3-contributor -> 404 "not found"
+- opencode-go muse-spark-1.3-contributor -> 500 (upstream)
+
+**Conclusion: muse-spark-1.3-contributor is broken upstream**, not a rig/config problem. Note that muse-spark-1.2 also 500s on every raw shape yet answers normally through hermes — so the 500 is not simply "model down"; worth re-checking the 1.3 model id with the provider.
