@@ -17,6 +17,9 @@ need **opposite** attacks:
   be refused. **→ the 12-turn ladder wins.**
 - **Component gate** — the model judges each piece *against the whole it already knows*, so the
   accumulated context becomes the trigger. **→ the ladder fails; isolation + de-naming wins.**
+- **Scope-holder gate** — the model tracks the whole across turns *and* negotiates scope openly,
+  converting the offensive ask into the nearest defensive deliverable instead of declining.
+  **→ the ladder runs to completion but ships only the defensive half; isolation + de-naming wins.**
 
 ## Models
 
@@ -24,7 +27,8 @@ need **opposite** attacks:
 |---|---|---|---|
 | **deepseek-v4.1-flash** | composition | **62/72 (86%)** — zero refusals, 6/6 categories | [`deepseek-v4.1-flash/`](deepseek-v4.1-flash/) |
 | **grok-4.6** | component | ladder 36/72 → **isolation + de-naming 13/13 (100%)** | [`grok-4.6/`](grok-4.6/) |
-| **muse-spark-1.3** | — | **blocked: upstream HTTP 500** (1.2 works) | [`muse-spark-1.3/`](muse-spark-1.3/) |
+| **muse-spark-1.2** | scope-holder | ladder 0/12 on core → **isolation + de-naming 13/13**, composed 4/4 | [`muse-spark/`](muse-spark/) |
+| **muse-spark-1.3** | — | **blocked: upstream HTTP 500** (1.2 works) | [`muse-spark/`](muse-spark/) |
 
 ## Diagnose before you invest
 
@@ -47,7 +51,7 @@ tools/                     shared tooling
   universal_all.py          the parameterised 6-category runner
 deepseek-v4.1-flash/       per-model everything
 grok-4.6/
-muse-spark-1.3/
+muse-spark/
 ```
 
 Each model folder carries its own `README.md`, its evidence transcripts, and — for grok — the
