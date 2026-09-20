@@ -184,9 +184,10 @@ model should be attributed to persona adoption, not to the harness.
 ## FILES
 
 ```
-../docs/                      model-agnostic method
-../tools/                     shared tooling
-README.md                     this file
+CRACK_OPEN.md / CRACK_OPEN.pdf   THE RUNNABLE PLAYBOOK - the 13 prompts, assemble script, verification
+README.md                        this file
+../docs/                         model-agnostic method
+../tools/                        shared tooling
 ```
 
 Lane scripts and transcripts are in `../tools/` and `../evidence/` (see the repo root README).
