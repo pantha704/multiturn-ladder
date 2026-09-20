@@ -52,7 +52,11 @@ tools/                     shared tooling
 deepseek-v4.1-flash/       per-model everything
 grok-4.6/
 muse-spark/
+  CRACK_OPEN.md / .pdf     runnable playbook: the 13 prompts + assemble + verify
 ```
+
+**Start here if you want to run it:** `muse-spark/CRACK_OPEN.pdf` — every prompt, script and check,
+copy-paste complete, for the component-gate and scope-holder classes.
 
 Each model folder carries its own `README.md`, its evidence transcripts, and — for grok — the
 lane scripts that produced the result.
