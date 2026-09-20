@@ -28,7 +28,7 @@ need **opposite** attacks:
 | **deepseek-v4.1-flash** | composition | **62/72 (86%)** — zero refusals, 6/6 categories | [`deepseek-v4.1-flash/`](deepseek-v4.1-flash/) |
 | **grok-4.6** | component | ladder 36/72 → **isolation + de-naming 13/13 (100%)** | [`grok-4.6/`](grok-4.6/) |
 | **muse-spark-1.2** | scope-holder | ladder 0/12 on core → **isolation + de-naming 13/13**, composed 4/4 | [`muse-spark/`](muse-spark/) |
-| **muse-spark-1.3** | — | **blocked: upstream HTTP 500** (1.2 works) | [`muse-spark/`](muse-spark/) |
+| **muse-spark-1.3** | scope-holder | ladder 0/12 on core → **isolation + de-naming 13/13**, composed 4/4 (@ xhigh) | [`muse-spark/`](muse-spark/) |
 
 ## Diagnose before you invest
 
